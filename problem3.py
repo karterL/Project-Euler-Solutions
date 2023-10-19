@@ -1,27 +1,19 @@
 #!/usr/bin/env python3
-def prime_list():
-    primes = [2]
-    num = 3
-    while num < 1000:
-        for i in range(2,num):
-            if (num%i) == 0:
+
+'''The prime factors of 13195 are 5, 7, 13, and 29.
+   What is the largest prime factor of the number
+   600851475143?'''
+
+def prime_factor(num, prime):
+    while True:
+        for i in range(2,prime):
+            if (prime%i) == 0:
                 break
-            elif (num-1) == i:
-                primes.append(num)
-        num += 1
-    return primes
+            elif ((prime-1) == i) and ((num%prime) == 0):
+                return num//prime
+        prime += 1
 
-def prime_factor(num, primes):
-    for i in range(len(primes)):
-        if (num%primes[i]) == 0:
-            qualified_primes.append(primes[i])
-            num = num/primes[i]
-            print(primes[i])
-
-
-primes = prime_list()
-print(primes)
 num = 600851475143
-qualified_primes = []
-prime_factor(num, primes)
+prime = 3
+print(prime_factor(num, prime))
 
