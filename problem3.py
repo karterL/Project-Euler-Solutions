@@ -10,7 +10,10 @@ def prime_factor(num, prime):
             if (prime%i) == 0:
                 break
             elif ((prime-1) == i) and ((num%prime) == 0):
-                return prime_factor(num//prime,prime)
+                num = num//prime
+                print(prime)
+                print(num)
+                # print(num)
         prime += 1
 
 num = 600851475143
